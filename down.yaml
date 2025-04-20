@@ -1,0 +1,8 @@
+- name: Delete Supabase from cluster
+  hosts: localhost
+  tasks:
+    - name: Uninstall Supabase
+      shell: helm uninstall supabase -n supabase
+
+    - name: Delete namespace
+      shell: kubectl delete namespace supabase
